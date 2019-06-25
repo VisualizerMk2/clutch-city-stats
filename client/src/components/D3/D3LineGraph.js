@@ -6,6 +6,8 @@ const D3LineGraph = ({ data, statCategory }) => {
 
   useEffect(
     () => {
+      d3.selectAll('svg > *').remove();
+
       if (data && d3Container.current) {
         const margin = { top: 40, right: 20, bottom: 50, left: 100 };
         const graphWidth = 560 - margin.left - margin.right;
