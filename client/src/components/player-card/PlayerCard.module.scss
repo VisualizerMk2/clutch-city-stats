@@ -1,0 +1,70 @@
+@import '../../variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Graduate&display=swap');
+
+.card {
+  width: 320px;
+  height: 500px;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border-radius: 6px;
+  align-items: center;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.cardHeader {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+  background: #ce1141;
+  color: #f7f7f7;
+}
+.cardBody {
+  font-size: $font-size-small;
+  margin: 0 $m-size;
+
+  p {
+    margin-top: 0.4rem;
+  }
+}
+
+.jerseyNumber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  margin-top: -$l-size;
+  font-family: 'Graduate', cursive;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid black;
+  p {
+    font-size: $font-size-large;
+  }
+}
+h2 {
+  font-size: $font-size-large;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+}
+
+.position {
+  font-size: $font-size-large;
+  font-weight: 700;
+  text-align: center;
+}
+
+.bioInfo {
+  margin: $s-size 0;
+  p {
+    margin: 0.4rem 0;
+  }
+  span {
+    font-weight: bold;
+  }
+}

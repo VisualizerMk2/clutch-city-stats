@@ -5,6 +5,8 @@ const D3BarGraph = ({ data, statCategory }) => {
   const d3Container = useRef(null);
 
   useEffect(() => {
+    const width = 600;
+    const height = 600;
     if (data && d3Container.current) {
       d3.selectAll('svg > *').remove();
 
@@ -21,13 +23,13 @@ const D3BarGraph = ({ data, statCategory }) => {
         bottom: 100,
         left: 100
       };
-      const graphWidth = 1000 - margin.left - margin.right;
-      const graphHeight = 600 - margin.top - margin.bottom;
+      const graphWidth = 700 - margin.left - margin.right;
+      const graphHeight = 500 - margin.top - margin.bottom;
 
       const svg = d3
         .select(d3Container.current)
-        .attr('width', 800)
-        .attr('height', 600);
+        .attr('width', width)
+        .attr('height', height);
 
       const graph = svg
         .append('g')

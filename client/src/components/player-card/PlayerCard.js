@@ -1,18 +1,31 @@
 import React from 'react';
-import styles from './PlayerCard.module.css';
+import styles from './PlayerCard.module.scss';
 
 const PlayerCard = (props) => {
   return (
     <div className={styles.card}>
-      <h2>
-        {props.firstName} {props.lastName}
-      </h2>
-      <p>Jersey #{props.jersey}</p>
-      <p>Position: {props.teamSitesOnly.posFull}</p>
-      <p>
-        Height: {props.heightFeet}' {props.heightInches}"
-      </p>
-      <p>Weight: {props.weightPounds}lb.</p>
+      <div className={styles.cardHeader}>
+        <h2>
+          {props.firstName} {props.lastName}
+        </h2>
+      </div>
+      <div className={styles.jerseyNumber}>
+        <p>#{props.jersey}</p>
+      </div>
+      <div className={styles.cardBody}>
+        <p className={styles.position}>{props.teamSitesOnly.posFull}</p>
+        <div className={styles.bioInfo}>
+          <p>
+            <span>Debut:</span> {props.nbaDebutYear}
+          </p>
+          <p>
+            <span>Height:</span> {props.heightFeet}' {props.heightInches}"
+          </p>
+          <p>
+            <span>Weight:</span> {props.weightPounds}lb.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

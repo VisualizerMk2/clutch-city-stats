@@ -9,7 +9,7 @@ import { compileStats } from './utils/compileStats';
 import { playerSelects, statSelects } from './utils/selectOptions';
 import { getPlayerBio } from './utils/getPlayerBio';
 
-import './App.css';
+import './App.scss';
 
 const App = () => {
   const [player, setPlayer] = useState('harden');
@@ -23,51 +23,51 @@ const App = () => {
     <div className="App">
       <Header />
       <div className="container">
-        <div className="main-content">
-          <div className="selections">
-            <div className="select-group">
-              <select
-                className="select"
-                onChange={(e) => {
-                  setPlayer(e.target.value);
-                  setPlayerData(compileStats(e.target.value, statCategory));
-                  setPlayerBio(getPlayerBio(e.target.value));
-                }}
-              >
-                {playerSelects.map((player) => (
-                  <option key={player.value} value={player.value}>
-                    {player.name}
-                  </option>
-                ))}
-              </select>
-              <select
-                className="select"
-                onChange={(e) => {
-                  setStatCategory(e.target.value);
-                  setPlayerData(compileStats(player, e.target.value));
-                }}
-              >
-                {statSelects.map((stat) => (
-                  <option key={stat.value} value={stat.value}>
-                    {stat.name}
-                  </option>
-                ))}
-              </select>
-              <select
-                className="select"
-                onChange={() => {
-                  setShowBarGraph(!showBarGraph);
-                  setShowLineGraph(!showLineGraph);
-                }}
-              >
-                <option value="bar">Bar Graph</option>
-                <option value="line">Line Graph</option>
-              </select>
-            </div>
+        <div className="selections">
+          <div className="select-group">
+            <select
+              className="select"
+              onChange={(e) => {
+                setPlayer(e.target.value);
+                setPlayerData(compileStats(e.target.value, statCategory));
+                setPlayerBio(getPlayerBio(e.target.value));
+              }}
+            >
+              {playerSelects.map((player) => (
+                <option key={player.value} value={player.value}>
+                  {player.name}
+                </option>
+              ))}
+            </select>
+            <select
+              className="select"
+              onChange={(e) => {
+                setStatCategory(e.target.value);
+                setPlayerData(compileStats(player, e.target.value));
+              }}
+            >
+              {statSelects.map((stat) => (
+                <option key={stat.value} value={stat.value}>
+                  {stat.name}
+                </option>
+              ))}
+            </select>
+            <select
+              className="select"
+              onChange={() => {
+                setShowBarGraph(!showBarGraph);
+                setShowLineGraph(!showLineGraph);
+              }}
+            >
+              <option value="bar">Bar Graph</option>
+              <option value="line">Line Graph</option>
+            </select>
           </div>
+        </div>
 
-          <div className="content">
-            <PlayerCard {...playerBio} />
+        <div className="dashboard">
+          <PlayerCard {...playerBio} />
+          <div>
             {showBarGraph && (
               <D3BarGraph data={playerData} statCategory={statCategory} />
             )}

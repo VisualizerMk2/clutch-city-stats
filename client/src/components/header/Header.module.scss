@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap');
+@import '../../variables.scss';
+
+.header {
+  border-bottom: 2px solid black;
+}
+h1 {
+  font-family: 'Merriweather', serif;
+  color: #ce1141;
+}
+
+.contentContainer {
+  margin: 0 auto;
+  padding: 0 $m-size;
+  max-width: 60rem;
+}
+.header__content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: $m-size 0;
+}
